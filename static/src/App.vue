@@ -2,10 +2,10 @@
   <div id="app" class="container">
     <div class="row">
       <div class="col">
-        <ping remote="http://htping-a.vis.ethz.ch" name="old"></ping>
+        <ping remote="https://htping-a.vis.ethz.ch" name="old"></ping>
       </div>
       <div class="col">
-        <ping remote="http://htping-b.vis.ethz.ch" name="new"></ping>
+        <ping remote="https://htping-b.vis.ethz.ch" name="new"></ping>
       </div>
     </div>
   </div>
