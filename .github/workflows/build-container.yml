@@ -1,0 +1,20 @@
+name: Build container
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+    name: Build docker container
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build container
+        run: docker build -t uubk/htping:latest .
+      - name: Publish container
+        run: |
+          echo "${DOCKERHUB_REGISTRY_TOKEN}" | docker login -u uubk --password-stdin
+          docker push uubk/htping:latest
+        env:
+          DOCKERHUB_REGISTRY_TOKEN: ${{ secrets.DOCKERHUB_REGISTRY_TOKEN }}
